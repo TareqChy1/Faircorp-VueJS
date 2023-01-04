@@ -3,7 +3,7 @@
 [Deployed Frontend on EMSE Gitlab Pages](https://github.com/TareqChy1/Faircorp-VueJS)
 
 - Author :[Tareq Md Rabiul Hossain CHY](https://www.linkedin.com/in/tareqmdrabiulhossainchy/), [Nushrat JAHAN](https://www.linkedin.com/in/nushrat-jahan-3275a9178/) and [Erfan ENFERAD](https://www.linkedin.com/in/erfan-enferad/)
-- VueJS Frontend App of the 2022 Web Programing project for [MSc CPS2 Web programming course](https://ci.mines-stetienne.fr/cps2/syllabus/)
+- VueJS Frontend App of the 2022 Web Programing project for [M.Sc. CPS2 Web programming course](https://ci.mines-stetienne.fr/cps2/syllabus/)
 - Based on [Quentin Richaud's course](https://gitlab.com/emse1/cours_js_1)
 
 ## Context
@@ -11,8 +11,43 @@
 The goal of the 2022 Web Programing project is to implement a fully functional Smart Building management system (especially building, rooms, windows and heaters controllers).\
 The project is composed of a [Java SpringBoot Backend server]() and a [VueJS Frontend server](https://github.com/TareqChy1/Faircorp-VueJS) interacting together. 
 
+## Docker
 
-## Project setup or access via the [Deployed GitHub Page](https://github.com/TareqChy1/Faircorp-VueJS)
+#### Docker Compose installation: 
+
+If Docker Desktop/Toolbox for either Windows or Mac installed, that means Docker Compose already have. 
+If anyone are on a Linux machine, will need to [install Docker Compose](https://docs.docker.com/compose/install/). 
+After installation, able to run the following and see version information.
+
+```
+docker compose version
+```
+
+#### Run docker-compose.yml file:
+
+Firstly make sure no other copies of the app/db are running first by running following command:
+
+```
+docker ps
+```
+
+Start up the application stack using the following command. We’ll add the -d flag to run everything in the background.
+
+```
+docker compose up -d
+```
+
+We’ll notice that the volume was created as well as a network! By default, Docker Compose automatically creates a network specifically for the application stack.
+
+Finally look at the logs using following command.
+```
+docker compose logs -f
+```
+
+We’ll see the logs from each of the services interleaved into a single stream. This is incredibly useful when we want to watch for timing-related issues. The -f flag “follows” the log, so will give we live output as it’s generated.
+
+
+## Project setup or access :
 Install all the dependencies
 
 ```

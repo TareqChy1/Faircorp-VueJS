@@ -1,0 +1,32 @@
+#reference: https://www.youtube.com/watch?v=HG6yIjZapSA&ab_channel=ProgrammingwithMosh
+#reference: https://www.ibm.com/docs/en/doc/4.0.0?topic=SSQVNT_4.0.0/com.ibm.doserver.doc/DBOS/deployment/step-2--create-a-docker-composeyml-file.htm
+
+
+version: "3.8"
+services:
+  faircorp-web-backend:
+    build: ./faircorp-springboot
+    ports:
+      - 8088:8080
+    image: faircorp-docker-img
+    container_name: faircorp-back
+    networks:
+      - optimserver
+
+  faircorp-web-frontend:
+    build: ./faircorp-vuejs
+    ports:
+        - 8080:8080
+    image: vuejs-docker
+    container_name: docker-vuejs
+    networks:
+      - optimserver
+
+
+
+#reference: https://linuxhint.com/docker_compose_bridge_networking/
+networks:
+  optimserver:
+    driver: bridge
+
+
